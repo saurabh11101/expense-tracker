@@ -46,16 +46,16 @@ document.addEventListener('DOMContentLoaded', function() {
             // Get category color
             function getCategoryColor(category) {
                 const colors = {
-                    'food': '#4361ee',
-                    'shopping': '#f72585',
-                    'transport': '#4cc9f0',
-                    'housing': '#7209b7',
-                    'entertainment': '#f8961e',
-                    'health': '#43aa8b',
-                    'education': '#577590',
-                    'other': '#6c757d'
+                    'food': '#6366f1',
+                    'shopping': '#ef4444',
+                    'transport': '#06b6d4',
+                    'housing': '#8b5cf6',
+                    'entertainment': '#f59e0b',
+                    'health': '#10b981',
+                    'education': '#0ea5e9',
+                    'other': '#64748b'
                 };
-                return colors[category] || '#6c757d';
+                return colors[category] || '#64748b';
             }
             
             // Add new expense
@@ -221,7 +221,11 @@ document.addEventListener('DOMContentLoaded', function() {
                     const bar = document.createElement('div');
                     bar.className = 'chart-bar';
                     bar.style.height = `${barHeight}px`;
-                    bar.style.background = dayTotal > 0 ? 'var(--primary)' : '#e0e0e0';
+                    if (dayTotal > 0) {
+                        bar.style.background = 'linear-gradient(180deg, rgba(99, 102, 241, 0.8), rgba(99, 102, 241, 0.4))';
+                    } else {
+                        bar.style.background = 'rgba(226, 232, 240, 0.1)';
+                    }
                     
                     const label = document.createElement('div');
                     label.className = 'chart-label';
